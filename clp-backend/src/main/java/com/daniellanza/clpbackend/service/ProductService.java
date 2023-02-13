@@ -1,6 +1,6 @@
 package com.daniellanza.clpbackend.service;
 
-import com.daniellanza.clpbackend.repository.UserRepository;
+import com.daniellanza.clpbackend.repository.ProductRepository;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class UserService {
+public class ProductService {
 
-    private UserRepository userRepository;
+    private ProductRepository productRepository;
 }
