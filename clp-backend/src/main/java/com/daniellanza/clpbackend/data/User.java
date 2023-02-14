@@ -1,13 +1,13 @@
 package com.daniellanza.clpbackend.data;
 
-import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Entity
+import javax.persistence.*;
+
+@Data
+@Entity(name = "Users")
 @NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 public class User {
@@ -16,19 +16,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false,unique = true)
+
+    @Column(unique = true)
     private String username;
 
-    @Column(nullable = false)
+
     private String password;
 
-    @Column(nullable = false)
+
     private String email;
 
-    @Column(nullable = false)
+
     private String firstName;
 
-    @Column(nullable = false)
+
     private String lastName;
 
 }

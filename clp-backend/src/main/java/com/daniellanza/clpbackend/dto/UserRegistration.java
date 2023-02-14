@@ -1,14 +1,13 @@
 package com.daniellanza.clpbackend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Setter
+@Getter
 public class UserRegistration {
 
     private String username;

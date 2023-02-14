@@ -1,12 +1,13 @@
 package com.daniellanza.clpbackend.data;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import javax.persistence.*;
+
+@Data
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 public class Product {

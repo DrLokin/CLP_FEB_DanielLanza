@@ -1,12 +1,12 @@
 package com.daniellanza.clpbackend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class LoginRequest {
     private String username;
     private String password;

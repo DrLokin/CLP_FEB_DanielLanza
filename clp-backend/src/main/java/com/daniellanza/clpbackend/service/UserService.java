@@ -8,19 +8,27 @@ import com.daniellanza.clpbackend.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class UserService {
 
-    private UserRepository userRepository;
-    private final ObjectMapper objectMapper;
+    private final UserRepository userRepository;
 
     public User saveUser(UserRegistration userRegistration){
-        User user = objectMapper.convertValue(userRegistration,User.class);
+        User user = new User();
+        System.out.println(user==null);
+        user.setEmail(userRegistration.getEmail());
+        user.setPassword(userRegistration.getPassword());
+        user.setUsername(userRegistration.getUsername());
+        user.setFirstName(userRegistration.getFirstName());
+        user.setLastName(userRegistration.getLastName());
+        System.out.println(user.getEmail());
         return userRepository.save(user);
     }
 
@@ -32,7 +40,7 @@ public class UserService {
         User user = userRepository.findByUsername(authRequest.getUsername());
         Optional<LoginResponse> logIn;
 
-        if(user.getPassword() == authRequest.getPassword()){
+        if(Objects.equals(user.getPassword(), authRequest.getPassword())){
             logIn = Optional.of(UserService.generateLoginResponse(user));
         }else{
             logIn = Optional.empty();
