@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,10 @@ import { HomePageComponent } from './components/home-page/home-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
