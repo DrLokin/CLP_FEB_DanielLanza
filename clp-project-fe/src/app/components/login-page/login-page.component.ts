@@ -65,7 +65,9 @@ export class LoginPageComponent {
     );
   }
 
-  
+  register(): void {
+    this.router.navigate(['register']);
+  }
 
 
 }
