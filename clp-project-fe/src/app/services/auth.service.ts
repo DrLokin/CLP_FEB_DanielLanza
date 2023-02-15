@@ -28,8 +28,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<User> {
-    const payload = {email:email, password:password};
+  login(username: string, password: string): Observable<User> {
+    const payload = {username:username, password:password};
     return this.http.post<User>(`${this.authUrl}/login`, payload);
   }
 
@@ -83,7 +83,7 @@ export class AuthService {
   }
 
   fetchUser():User {
-    let tmp = localStorage.getItem('user')
+    let tmp = localStorage.getItem('user');
     let user:User = {id:0}
     // TODO: if localstorage is empty, fetch the user again
     if (tmp !== null) // localStorage only stores string... make sure we parse it to get its actual object
