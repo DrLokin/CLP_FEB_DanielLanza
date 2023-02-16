@@ -8,13 +8,15 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
